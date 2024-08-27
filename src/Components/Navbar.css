@@ -1,0 +1,173 @@
+/* src/Components/Navbar.css */
+
+/* Base styles */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 1s ease, color 1s ease; /* Smooth transition for body */
+}
+
+body.dark-mode {
+  background-color: #1a202c;
+  color: white;
+}
+
+body.light-mode {
+  background-color: #fff9f9;
+  color: black;
+}
+
+header {
+  padding: 15px 0;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 1s ease, color 1s ease;
+}
+
+header.dark-mode {
+  background-color: #1a202c;
+  color: white;
+}
+
+header.light-mode {
+  background-color: #f0f0f0;
+  color: black;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  transition: color 1s ease;
+}
+
+.accent {
+  color: #63b3ed;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+}
+
+li {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* Light mode link colors */
+body.light-mode a {
+  color: #5a5a5a;
+}
+
+body.light-mode a:hover {
+  color: black;
+  background-color: transparent;
+}
+
+/* Dark mode link colors */
+body.dark-mode a {
+  color: rgb(242, 233, 216);
+}
+
+body.dark-mode a:hover {
+  color: white;
+  background-color: transparent;
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.try-it-button {
+  background-color: #63b3ed;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 1s ease;
+}
+
+.try-it-button:hover {
+  background-color: #4299e1;
+}
+
+/* Switch Styles */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #63b3ed;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.slider.round {
+  border-radius: 20px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
